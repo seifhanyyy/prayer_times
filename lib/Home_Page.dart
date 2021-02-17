@@ -45,7 +45,7 @@ class StartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Hii deeebb',
+      title: 'Hii deeebbbbb',
       home: Playground(),
       debugShowCheckedModeBanner: false,
     );

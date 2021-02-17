@@ -10,7 +10,7 @@ import 'qiblah_maps.dart';
 void main()
 {runApp(QiblaMecca());}
 class QiblaMecca extends StatefulWidget {
-  @override
+
   _MyAppState createState() => _MyAppState();
 }
 

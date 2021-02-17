@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:praytimes/Feedback.dart';
 import 'package:praytimes/qiblah_compass.dart';
 import 'Al-Quran.dart';
 import 'Home_Page.dart';
@@ -7,9 +8,9 @@ import 'Home_Page.dart';
 import 'Al-Azkar.dart';
 import 'package:praytimes/Custom_Icons/custom_icons_icons.dart';
 import 'package:dcdg/dcdg.dart';
-
-
+import 'package:praytimes/Settings.dart';
 import 'Quraaaaaan.dart';
+import 'Feedback.dart';
 
 void main() {
   runApp(Main());
@@ -27,18 +28,22 @@ class _MainState extends State<Main> {
     HomePage(),
     AlAzkarPage(),
     Quran(),
-    QiblahCompass()
+    QiblahCompass(),
+    ReachUs()
   ];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Prayer Times',
       theme: ThemeData(
         brightness: Brightness.dark,
       ),
       home: Scaffold(
+
         body: pages[_currentIndex],
+
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           type: BottomNavigationBarType.fixed,
@@ -59,6 +64,10 @@ class _MainState extends State<Main> {
             BottomNavigationBarItem(
               icon: Icon(CustomIcons.compass_1),
               title: Text('Qibla'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CustomIcons.compass_1),
+              title: Text('Settings'),
             ),
           ],
           onTap: (index) {

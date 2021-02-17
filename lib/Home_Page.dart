@@ -9,7 +9,6 @@ import 'json_connection.dart';
 import 'Al-Azkar.dart';
 import 'Quraaaaaan.dart';
 import 'playground.dart';
-import 'Constants.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:praytimes/helper/local_notifications_helper.dart';
@@ -18,7 +17,7 @@ import 'package:praytimes/helper/local_notifications_helper.dart';
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 NotificationAppLaunchDetails notificationAppLaunchDetails;
 
-const backGroundColor = Color(0xFFECD8A1);
+
 
 void main() async {
 
@@ -61,7 +60,6 @@ class Home extends StatelessWidget {
 
     return MaterialApp(
         home: Scaffold(
-          backgroundColor: backGroundColor,
           body:
           HomePage(),
         ));
@@ -151,7 +149,7 @@ class _Clock extends State<Clock> {
         width: 270,
         height: 270,
       ),
-      color: backGroundColor,
+
       alignment: Alignment.center,
     );
   }
@@ -161,13 +159,15 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Prayer Times',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       home: Scaffold(
-        backgroundColor: backGroundColor,
         appBar: AppBar(
           title: const Text('Prayer Times'),
         ),
-          bottomNavigationBar:navBar,
         body: Column(children: <Widget>[
           imageSection,
           prayTime,

@@ -1,29 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'Constants.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(AlAzkarPage());
 }
 
 class AlAzkarPage extends StatelessWidget {
   //final alAzkarrrObject = new _alAzkarrrState();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'AlAzkar Page',
       home: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color(0xFFECD8A1),
             title: Text(
               'Al-Azkar',
-              style: TextStyle(
-                color: kBackgroundColor,
-              ),
             ),
           ),
-          bottomNavigationBar: navBar,
           body: Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/yoyo.jpg"),
+                  fit: BoxFit.cover,
+                  colorFilter: new ColorFilter.mode(
+                      Colors.black.withOpacity(0.56), BlendMode.dstATop)),
+            ),
             child: alAzkar(),
           )),
     );
@@ -34,9 +42,10 @@ final List<String> azkarAlNom = <String>['اذكار النوم'];
 final List<String> azkarAlSalah = <String>['اذكار الصلاه'];
 final List<String> azkarAlMasaa = <String>['اذكار المساء'];
 final List<String> azkarAlSabah = <String>['اذكار الصباح'];
+final dbRef = FirebaseDatabase.instance.reference().child("pets");
 
 final List<String> alAzkarMenuList = <String>[
-  'اذكار النوم',
+  'اذكار  قبل الوضوء',
   'اذكار الصلاة',
   'اذكار المساء',
   'اذكار الصباح'
@@ -51,6 +60,7 @@ final List<String> alAzkarMenuListIndicies = <String>[
 class alAzkar extends StatefulWidget {
   @override
   _alAzkarState createState() => _alAzkarState();
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 }
 
 class _alAzkarState extends State<alAzkar> {
@@ -66,12 +76,11 @@ class _alAzkarState extends State<alAzkar> {
 
   @override
   Widget build(BuildContext context) {
-    
     return Column(
       children: [
         Container(
-          color: mainColor,
-          height: MediaQuery.of(context).size.height/13,
+          color: deeb,
+          height: MediaQuery.of(context).size.height / 13,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             //padding: const EdgeInsets.symmetric(: 8),
@@ -86,18 +95,21 @@ class _alAzkarState extends State<alAzkar> {
                       fontFamily: 'Roboto',
                       fontWeight: FontWeight.w900,
                       fontSize: 30,
-                      color: kBackgroundColor,
                     ),
                   ),
                   onTap: () {
                     setState(() {
-                      menuIndex = '${alAzkarMenuListIndicies[index]}'; //3shan n3rf e7na dosna 3la anhy menu
+                      menuIndex =
+                          '${alAzkarMenuListIndicies[index]}'; //3shan n3rf e7na dosna 3la anhy menu
                       print("Menu Index " + menuIndex);
-                      chosenMenu.clear(); //3shan awel ma ydoos ysheel el 7agat el fel list el adeema 
-                      if (menuIndex == '1') { //lw das 3la awel menu
-                        for (int i = 0; i < azkarAlNom.length; i++) { 
-                          chosenMenu.add('${azkarAlNom[i]}'); //n-add list el azkar 3la el list de
-                        } 
+                      chosenMenu
+                          .clear(); //3shan awel ma ydoos ysheel el 7agat el fel list el adeema
+                      if (menuIndex == '1') {
+                        //lw das 3la awel menu
+                        for (int i = 0; i < azkarAlNom.length; i++) {
+                          chosenMenu.add(
+                              '${azkarAlNom[i]}'); //n-add list el azkar 3la el list de
+                        }
                       } else if (menuIndex == '2') {
                         for (int i = 0; i < azkarAlSalah.length; i++) {
                           chosenMenu.add('${azkarAlSalah[i]}');
@@ -128,9 +140,10 @@ class _alAzkarState extends State<alAzkar> {
                 //print(chosenMenu);
                 return Card(
                   margin: EdgeInsets.all(8.0),
-                  color: mainColor,
+                  color: deeb,
                   child: Center(
-                    child: Text(chosenMenu[index]), //builder bt5ly el gowa el list yo3od yktb bel amount bta3 el item count
+                    child: Text(chosenMenu[
+                        index]), //builder bt5ly el gowa el list yo3od yktb bel amount bta3 el item count
                   ),
                 );
               },

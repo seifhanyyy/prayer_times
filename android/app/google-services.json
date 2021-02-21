@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "733760702813",
+    "firebase_url": "https://prayertimes-25fb2-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "prayertimes-25fb2",
+    "storage_bucket": "prayertimes-25fb2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733760702813:android:ea08594c89fa79efa940b4",
+        "android_client_info": {
+          "package_name": "com.deeb.prayertimes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733760702813-e2iunf2pop9v12q7ttduorbhong3g41j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmcoBazw7YDsib59G-WkRfO3ffilLHnzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733760702813-e2iunf2pop9v12q7ttduorbhong3g41j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733760702813:android:baf3bfffd44d585ba940b4",
+        "android_client_info": {
+          "package_name": "com.example.praytimes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733760702813-krdfm84fp27a5vt2tbk779aqfqj91j3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.praytimes",
+            "certificate_hash": "9ed4711994786ed8695afa94b3726617fc5e4479"
+          }
+        },
+        {
+          "client_id": "733760702813-e2iunf2pop9v12q7ttduorbhong3g41j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmcoBazw7YDsib59G-WkRfO3ffilLHnzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733760702813-e2iunf2pop9v12q7ttduorbhong3g41j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

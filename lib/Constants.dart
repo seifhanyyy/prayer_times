@@ -13,7 +13,9 @@ import 'main.dart';
 const kBackgroundColor = Color(0xFF20202);
 const kPrimaryColor = Color(0xFFECD8A1);
 const mainColor = Color(0xFFECD8A1);
+const deeb = Color(0x00FFFFFF);
 const elAzkarMenuColor = Color(0xFF558C40);
+Image alpha = Image.asset('images/yoyo.jpg');
 
 Widget navBar = Container(
   color: mainColor.withOpacity(0.5),
@@ -85,7 +87,6 @@ class NavBar extends StatelessWidget {
             navigateToAlQibla(context);
           },
         ),
-
       ],
     );
   }
@@ -121,7 +122,8 @@ Future navigateToAlSowr(context) async {
 }
 
 Future navigateToAlQibla(context) async {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => QiblaMecca()));
+  Navigator.push(
+      context, MaterialPageRoute(builder: (context) => QiblaMecca()));
 }
 
 Future navigateToHome(context) async {

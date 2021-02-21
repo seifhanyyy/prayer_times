@@ -21,6 +21,7 @@ class Quran2 extends StatelessWidget {
       },
       title: 'َQuran Page',
       home: Scaffold(
+        
         appBar: AppBar(
           backgroundColor: mainColor,
           title: Text(
@@ -70,6 +71,7 @@ final List<int> Paths = <int>[
 ];
 
 Widget alAzkar = Container(
+  
   child: ListView.builder(
     physics: NeverScrollableScrollPhysics(),
     padding: const EdgeInsets.all(15),
@@ -155,6 +157,15 @@ Widget quranPage = Row(
               fit: BoxFit.fill,
             ),
           ),
+        ),
+        Container(
+           decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/yoyo.jpg"),
+            fit: BoxFit.cover,
+            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.56), BlendMode.dstATop)
+          ),
+            ),
         ),
         Container(
           height: 120,

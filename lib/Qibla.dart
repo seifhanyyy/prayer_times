@@ -20,13 +20,6 @@ class _MyAppState extends State<QiblaMecca> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: Color(0xff0c7b93),
-        primaryColorLight: Color(0xff00a8cc),
-        primaryColorDark: Color(0xff27496d),
-        accentColor: Color(0xffecce6d),
-      ),
-      darkTheme: ThemeData.dark().copyWith(accentColor: Color(0xffecce6d)),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Qiblaa'),

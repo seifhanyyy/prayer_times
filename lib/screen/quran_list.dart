@@ -64,17 +64,27 @@ class _QuranListState extends State<QuranList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      
       appBar: AppBar(
         leading: const Icon(Icons.book),
         title: const Text("Al-Qur'an"),
+        
       ),
-
+    
       floatingActionButton: loadMore ? CircularProgressIndicator() : null,
       body: Container(
-        padding: const EdgeInsets.all(5),
-        margin: const EdgeInsets.all(5),
-
+        
+         decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/yoyo.jpg"),
+            fit: BoxFit.fill,
+            colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.56), BlendMode.dstATop)
+        
+           
+  ),
+            ),
+             padding: const EdgeInsets.all(5),
+            margin: const EdgeInsets.all(5),
         child: firstLoad
             ? Center(
                 child: CircularProgressIndicator(),

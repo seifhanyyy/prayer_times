@@ -3,10 +3,17 @@ import 'package:flutter/rendering.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'Constants.dart';
+import 'Alphaaa.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  Query _ref;
+  DatabaseReference reference =
+      FirebaseDatabase.instance.reference().child('rashad');
+  _ref = FirebaseDatabase.instance
+      .reference()
+      .child('rashad')
+      .orderByChild('category');
+
   runApp(AlAzkarPage());
 }
 
@@ -42,7 +49,7 @@ final List<String> azkarAlNom = <String>['اذكار النوم'];
 final List<String> azkarAlSalah = <String>['اذكار الصلاه'];
 final List<String> azkarAlMasaa = <String>['اذكار المساء'];
 final List<String> azkarAlSabah = <String>['اذكار الصباح'];
-final dbRef = FirebaseDatabase.instance.reference().child("pets");
+//final dbRef = FirebaseDatabase.instance.reference().child("pets");
 
 final List<String> alAzkarMenuList = <String>[
   'اذكار  قبل الوضوء',
@@ -57,10 +64,11 @@ final List<String> alAzkarMenuListIndicies = <String>[
   '4',
 ];
 
+
+
 class alAzkar extends StatefulWidget {
   @override
   _alAzkarState createState() => _alAzkarState();
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 }
 
 class _alAzkarState extends State<alAzkar> {
@@ -68,7 +76,6 @@ class _alAzkarState extends State<alAzkar> {
   List<String> chosenMenu = <String>[];
   var menuIndexInteger = 0;
   Widget alAzkarWidget;
-
   @override
   void initState() {
     super.initState();
@@ -138,14 +145,41 @@ class _alAzkarState extends State<alAzkar> {
               itemCount: chosenMenu.length, //length el list
               itemBuilder: (BuildContext context, int index) {
                 //print(chosenMenu);
-                return Card(
+                /*return Card(
                   margin: EdgeInsets.all(8.0),
                   color: deeb,
                   child: Center(
                     child: Text(chosenMenu[
                         index]), //builder bt5ly el gowa el list yo3od yktb bel amount bta3 el item count
                   ),
-                );
+                );*/
+              /*  childern:
+                [
+                  Row(children: [
+                    Text(
+                      rashad['category'],
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    Text(
+                      rashad['description'],
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    Text(
+                      rashad['zekr'],
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ])
+                ];
+                */
               },
             ),
           ),

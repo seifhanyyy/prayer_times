@@ -11,6 +11,7 @@ import 'package:dcdg/dcdg.dart';
 import 'package:praytimes/Settings.dart';
 import 'Quraaaaaan.dart';
 import 'Feedback.dart';
+import 'Alphaaa.dart';
 
 void main() {
   runApp(Main());
